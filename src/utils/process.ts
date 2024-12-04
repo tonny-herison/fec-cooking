@@ -1,3 +1,10 @@
+/**
+ *
+ * @param file
+ * @returns
+ *
+ * Process FEC file - txt format only
+ */
 export function processFecFile(file: File): Promise<string[][]> {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();

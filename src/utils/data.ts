@@ -5,6 +5,13 @@ import { TableColumn } from "react-data-table-component";
 
 dayjs.extend(minMax);
 
+/**
+ *
+ * @param date
+ * @returns
+ *
+ * Format date from FEC format to DD/MM/YYYY
+ */
 export function formatFecDate(date: string): string {
   return `${date.substring(0, 4)}-${date.substring(4, 6)}-${date.substring(
     6,
@@ -12,6 +19,13 @@ export function formatFecDate(date: string): string {
   )}`;
 }
 
+/**
+ *
+ * @param data
+ * @returns
+ *
+ * Format columns from fec file to be used in DataTable
+ */
 export function formatColumns(data: string[][]): TableColumn<any>[] {
   return data[0]
     ? data[0].map((label, index) => ({
@@ -33,6 +47,14 @@ export function formatColumns(data: string[][]): TableColumn<any>[] {
     : [];
 }
 
+/**
+ *
+ * @param data
+ * @param columnLabel
+ * @returns
+ *
+ * Get index of column from data
+ */
 export function getColumnIndex(
   data: string[][],
   columnLabel: keyof typeof COLUMNS | keyof typeof COMPAUXCOLUMNS
@@ -44,6 +66,13 @@ export function getColumnIndex(
   return columnIndex;
 }
 
+/**
+ *
+ * @param data
+ * @returns
+ *
+ * Format data from fec file to be used in DataTable
+ */
 export function formatData(data: string[][]): any[] {
   const d = data.slice(1);
   return d.map((row: string[]) => {
@@ -55,6 +84,14 @@ export function formatData(data: string[][]): any[] {
   });
 }
 
+/**
+ *
+ * @param data
+ * @param columnLabel
+ * @returns
+ *
+ * Get unique values from data
+ */
 export function getUniqueValues(
   data: string[][],
   columnLabel: keyof typeof COLUMNS | keyof typeof COMPAUXCOLUMNS
@@ -73,6 +110,13 @@ export function getUniqueValues(
   return [...new Set(columnValues)];
 }
 
+/**
+ *
+ * @param data
+ * @returns
+ *
+ * Retrieves the start date and end date of the fiscal year
+ */
 export function getExerciceData(data: string[][]): {
   debut: string;
   fin: string;

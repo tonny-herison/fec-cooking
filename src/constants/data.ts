@@ -5,6 +5,7 @@ export const fecDatesColumns: (keyof typeof COLUMNS)[] = [
   "ValidDate",
 ];
 
+//FEC Columns
 export enum COLUMNS {
   "JournalCode" = "Code de journal",
   "JournalLib" = "Libellé de journal",
