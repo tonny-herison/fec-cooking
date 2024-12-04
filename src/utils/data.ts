@@ -10,7 +10,7 @@ dayjs.extend(minMax);
  * @param date
  * @returns
  *
- * Format date from FEC format to DD/MM/YYYY
+ * Format date from FEC format to YYYY-MM-DD
  */
 export function formatFecDate(date: string): string {
   return `${date.substring(0, 4)}-${date.substring(4, 6)}-${date.substring(
